@@ -19,7 +19,6 @@ const PinDetail = ({ user }) => {
 
     const fetchPinDetails = () => {
         let query = pinDetailQuery(pinId)
-
         if (query) {
             client.fetch(`${query}`).then((data) => {
                 setPinDetail(data[0]);

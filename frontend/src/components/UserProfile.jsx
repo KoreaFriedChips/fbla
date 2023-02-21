@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineLogout } from 'react-icons/ai';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
 
 import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
@@ -8,6 +8,7 @@ import { client } from '../client';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
 import { fetchUser } from '../utils/fetchUser';
+import photara from '../assets/photara.png';
 
 const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
 const notActiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
@@ -51,8 +52,9 @@ const UserProfile = () => {
         navigate('/login');
     };
 
-    if (!user)
+    if (!user) {
         return <Spinner message="Loading profile" />;
+    }
 
     return (
         <div className="relative pb-2 h-full justify-center items-center">
@@ -91,6 +93,14 @@ const UserProfile = () => {
                                 cookiePolicy="single_host_origin"
                             />
                         )}
+                    </div>
+                    <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
+                        <Link
+                            to="/"
+                            className="flex px-2  w-190 items-center"
+                        >
+                            <img src={photara} alt="photara" className="w-full" />
+                        </Link>
                     </div>
                 </div>
                 <div className="text-center mb-7">
