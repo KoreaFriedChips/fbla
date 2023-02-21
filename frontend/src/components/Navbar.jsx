@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { IoMdAdd, IoMdSearch } from 'react-icons/io';
 import { categories } from '../utils/data';
-import logo from '../assets/yrdsb.png';
 
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
@@ -26,14 +25,14 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                 alt="user-pic"
                             />
                         </div>
-                        <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
+                        {/* <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
                             <Link
                                 to="/"
                                 className="flex px-2  w-190 items-center"
                             >
                                 <img src={logo} alt="logo" className="w-full" />
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="">
                         <div className="overflow-x-auto flex flex-row justify-around mt-5 px-3 visible ">
@@ -90,25 +89,27 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                 alt="user-pic"
                             />
                         </div>
-                        <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
+                        {/* <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
                             <Link
                                 to="/"
                                 className="flex px-2  w-190 items-center"
                             >
                                 <img src={logo} alt="logo" className="w-full" />
                             </Link>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="">
-                        <div className="overflow-x-auto flex flex-row justify-around mt-5 px-3 invisible md:visible ">
+                        <div className="overflow-x-auto flex flex-row mt-5 px-3">
                             {categories.slice(0, categories.length).map((category) => (
                                 <NavLink
                                     to={`/category/${category.name}`}
                                     className={isNotActiveStyle}
                                     key={category.name}
                                 >
-                                    <img src={category.image} className="w-12 h-12 rounded-full shadow-sm object-fit" alt="category" />
-                                    {category.name}
+                                    <div className="mr-4 items-center">
+                                        <img src={category.image} className=" w-12 h-12 rounded-full shadow-sm object-fit" alt="category" />
+                                        {category.name}
+                                    </div>
                                 </NavLink>
                             ))}
                         </div>

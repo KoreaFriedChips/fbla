@@ -3,8 +3,8 @@ import { NavLink, Link } from 'react-router-dom';
 import { RiHomeFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
 
-import logo from '../assets/yrdsb.png';
-import { categories, ranking } from '../utils/data';
+import logo from '../assets/djx.png';
+import { prizes, ranking } from '../utils/data';
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black  transition-all duration-200 ease-in-out capitalize';
@@ -26,15 +26,22 @@ const Sidebar = ({ closeToggle, user }) => {
                     <img src={logo} alt="logo" className="w-full" />
                 </Link>
                 <div className="flex flex-col gap-5">
-                    <div class="h-56 group">
-                        <Link
-                            to="/Prizes"
-                        >
-                            <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">Prizes</h3>
-                        </Link>
-                        <div class="h-12 duration-200 bg-orange-400 group-hover:h-44" />
-
-                        <div class="duration-200 h-44 bg-lime-400 group-hover:h-12">
+                    <div class="h-256 group">
+                        <div class="flex flex-col overflow-hidden gap-3 h-10 duration-200  group-hover:h-96">
+                            <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">This Month's Prizes</h3>
+                            {prizes.slice(0, prizes.length).map((prize) => (
+                                <NavLink
+                                    to={`/`}
+                                    className={isNotActiveStyle}
+                                    onClick={handleCloseSidebar}
+                                    key={prize.name}
+                                >
+                                    <img src={prize.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
+                                    {prize.name}
+                                </NavLink>
+                            ))}
+                        </div>
+                        <div class="flex flex-col gap-3 duration-200 h-100 group-hover:h-100">
                             <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">Leaderboard</h3>
                             {ranking.slice(0, ranking.length).map((rank) => (
                                 <NavLink
@@ -44,7 +51,7 @@ const Sidebar = ({ closeToggle, user }) => {
                                     key={rank.name}
                                 >
                                     {rank.rank}
-                                    <img src={rank.image} className="w-12 h-12 rounded-full shadow-sm object-fit" />
+                                    <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
                                     {rank.name}
                                 </NavLink>
                             ))}
