@@ -8,7 +8,7 @@ import { BsFillArrowUpRightCircleFill } from 'react-icons/bs'
 import { client, urlFor } from '../client';
 import { fetchUser } from '../utils/fetchUser'
 
-const Pin = ({ pin: { postedBy, image, _id, save } }) => {
+const Pin = ({ pin: { postedBy, image, _id, save, title } }) => {
 
     const [postHovered, setPostHovered] = useState(false);
     const [savingPost, setSavingPost] = useState(false);

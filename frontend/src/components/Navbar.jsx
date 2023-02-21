@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useNavigate, NavLink } from 'react-router-dom';
 import { IoMdAdd, IoMdSearch } from 'react-icons/io';
 import { categories } from '../utils/data';
-import photara from '../assets/photara.png';
+import logo from '../assets/yrdsb.png';
 
 
 const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
@@ -31,7 +31,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                 to="/"
                                 className="flex px-2  w-190 items-center"
                             >
-                                <img src={photara} alt="photara" className="w-full" />
+                                <img src={logo} alt="logo" className="w-full" />
                             </Link>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                     className={isNotActiveStyle}
                                     key={category.name}
                                 >
-                                    <img src={category.image} className="w-12 h-12 rounded-full shadow-sm object-fit" alt="category" />
+                                    <img src={category.image} className="w-12 h-12 rounded-full shadow-sm object-contain" alt="category" />
                                     {category.name}
                                 </NavLink>
                             ))}
@@ -95,16 +95,16 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                 to="/"
                                 className="flex px-2  w-190 items-center"
                             >
-                                <img src={photara} alt="photara" className="w-full" />
+                                <img src={logo} alt="logo" className="w-full" />
                             </Link>
                         </div>
                     </div>
-                    {/* <div className="">
+                    <div className="">
                         <div className="overflow-x-auto flex flex-row justify-around mt-5 px-3 invisible md:visible ">
                             {categories.slice(0, categories.length).map((category) => (
                                 <NavLink
                                     to={`/category/${category.name}`}
-                                    className={({ isActive }) => (isActive ? isActiveStyle : isNotActiveStyle)}
+                                    className={isNotActiveStyle}
                                     key={category.name}
                                 >
                                     <img src={category.image} className="w-12 h-12 rounded-full shadow-sm object-fit" alt="category" />
@@ -112,7 +112,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                                 </NavLink>
                             ))}
                         </div>
-                    </div> */}
+                    </div>
 
                     <div className="px-2 md:px-5 flex  gap-2 md:gap-5 w-full mt-5 mb-5">
 

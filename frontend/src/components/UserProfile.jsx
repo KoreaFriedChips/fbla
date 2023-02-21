@@ -8,7 +8,7 @@ import { client } from '../client';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
 import { fetchUser } from '../utils/fetchUser';
-import photara from '../assets/photara.png';
+import logo from '../assets/yrdsb.png';
 
 const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
 const notActiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
@@ -99,7 +99,7 @@ const UserProfile = () => {
                             to="/"
                             className="flex px-2  w-190 items-center"
                         >
-                            <img src={photara} alt="photara" className="w-full" />
+                            <img src={logo} alt="logo" className="w-full" />
                         </Link>
                     </div>
                 </div>
