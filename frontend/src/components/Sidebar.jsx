@@ -37,7 +37,7 @@ const Sidebar = ({ closeToggle, user }) => {
                                     key={prize.name}
                                 >
                                     <img src={prize.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
-                                    {prize.name}
+                                    {prize.name} | {prize.points}
                                 </NavLink>
                             ))}
                         </div>
@@ -52,7 +52,7 @@ const Sidebar = ({ closeToggle, user }) => {
                                 >
                                     {rank.rank}
                                     <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
-                                    {rank.name}
+                                    {rank.name} | {rank.points}
                                 </NavLink>
                             ))}
                         </div>
