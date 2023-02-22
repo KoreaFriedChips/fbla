@@ -18,6 +18,12 @@ export default {
             title: 'Admin',
             type: 'boolean',
             initialValue: false
+        },
+        {
+            name: 'points',
+            title: 'Points',
+            type: 'number',
+            initialValue: 0
         }
     ]
 }

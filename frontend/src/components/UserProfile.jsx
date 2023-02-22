@@ -56,6 +56,8 @@ const UserProfile = () => {
         return <Spinner message="Loading profile" />;
     }
 
+    console.log(user)
+
     return (
         <div className="relative pb-2 h-full justify-center items-center">
             <div className="flex flex-col pb-5">
@@ -72,9 +74,13 @@ const UserProfile = () => {
                             alt="user-pic"
                         />
                     </div>
-                    <h1 className="font-bold text-3xl text-center mt-3">
-                        {user.userName}
-                    </h1>
+                    <div className="flex flex-row justify-center items-center">
+                        <h1 className="font-bold text-3xl text-center mt-3 mr-5">
+                            {user.userName}
+                        </h1>
+                        <p className='text-xl mt-3 text-center'>{user.points} points</p>
+                    </div>
+
                     <div className="absolute top-0 z-1 right-0 p-2">
                         {userId === User.googleId && (
                             <GoogleLogout
@@ -93,14 +99,6 @@ const UserProfile = () => {
                                 cookiePolicy="single_host_origin"
                             />
                         )}
-                    </div>
-                    <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
-                        <Link
-                            to="/"
-                            className="flex px-2  w-190 items-center"
-                        >
-                            <img src={logo} alt="logo" className="w-full" />
-                        </Link>
                     </div>
                 </div>
                 <div className="text-center mb-7">
