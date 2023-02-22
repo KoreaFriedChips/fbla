@@ -57,6 +57,33 @@ const PinDetail = ({ user }) => {
     if (!pinDetail)
         return <Spinner message="Loading pin..." />
 
+    let points = 0;
+    switch (pinDetail.category) {
+        case 'Formal':
+            points = 50;
+            break;
+        case 'Festive':
+            points = 30;
+            break;
+        case 'Spirit Week':
+            points = 10;
+            break;
+        case 'Sports':
+            points = 20;
+            break;
+        case 'Field Trip':
+            points = 10;
+            break;
+        case 'Social':
+            points = 25;
+            break;
+        case 'Fundraiser':
+            points = 15;
+            break;
+        default:
+            points = 0;
+    }
+
     return (
         <>
             {pinDetail && (
@@ -80,6 +107,9 @@ const PinDetail = ({ user }) => {
                                 </a>
                             </div>
                             {/* right side empty, maybe put save button */}
+                            <div>
+                                <p>{points} points</p>
+                            </div>
                         </div>
                         <div>
                             <h1 className="text-4xl font-bold break-words mt-3">
