@@ -75,10 +75,11 @@ const UserProfile = () => {
                         />
                     </div>
                     <div className="flex flex-row justify-center items-center">
-                        <h1 className="font-bold text-3xl text-center mt-3 mr-5">
+                        <h1 className="font-bold text-3xl text-center mt-3">
                             {user.userName}
                         </h1>
-                        <p className='text-xl mt-3 text-center'>{user.points} points</p>
+                        <p className='font-bold text-xl mt-3 text-center'>&#160;|&#160;Grade: {user.grade} | </p>
+                        <p className='font-bold text-xl mt-3 text-center'>&#160;{user.points} points</p>
                     </div>
 
                     <div className="absolute top-0 z-1 right-0 p-2">
@@ -120,7 +121,7 @@ const UserProfile = () => {
                         }}
                         className={`${activeBtn === 'saved' ? activeBtnStyles : notActiveBtnStyles}`}
                     >
-                        Saved
+                        Joined
                     </button>
                 </div>
 

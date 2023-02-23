@@ -24,6 +24,12 @@ export default {
             title: 'Points',
             type: 'number',
             initialValue: 0
+        },
+        {
+            name: 'grade',
+            title: 'Grade',
+            type: 'number',
+            initialValue: 0
         }
     ]
 }
