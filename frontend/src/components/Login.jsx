@@ -2,15 +2,15 @@ import React from 'react'
 import GoogleLogin from 'react-google-login'
 import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
-import shareVideo from '../assets/share.mp4'
-import logo from '../assets/logowhite.png'
+import introVideo from '../assets/intro-video.mp4'
+import logo from '../assets/djx.png'
 
 import { client } from '../client'
 
 const Login = () => {
     const navigate = useNavigate();
     const responseGoogle = (response) => {
-        console.log(response)
+        // console.log(response)
         localStorage.setItem('user', JSON.stringify(response.profileObj))
 
         const { name, googleId, imageUrl } = response.profileObj
@@ -31,7 +31,7 @@ const Login = () => {
         <div className='flex justify-start items-center flex-col h-screen'>
             <div className="relative w-full h-full">
                 <video
-                    src={shareVideo}
+                    src={introVideo}
                     type='video/mp4'
                     loop
                     controls={false}
@@ -41,7 +41,7 @@ const Login = () => {
                 />
                 <div className="absolute flex flex-col justify-center items-center top-0 right-0 left-0 bottom-0 bg-blackOverlay">
                     <div className="p-5">
-                        <img src={logo} width='130px' alt="logo" />
+                        <img src={logo} width='200px' alt="logo" />
                     </div>
                     <div className="shadow-2xl">
                         <GoogleLogin

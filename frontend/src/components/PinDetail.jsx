@@ -19,7 +19,6 @@ const PinDetail = ({ user }) => {
 
     const fetchPinDetails = () => {
         let query = pinDetailQuery(pinId)
-
         if (query) {
             client.fetch(`${query}`).then((data) => {
                 setPinDetail(data[0]);
@@ -58,6 +57,38 @@ const PinDetail = ({ user }) => {
     if (!pinDetail)
         return <Spinner message="Loading pin..." />
 
+    let points = 0;
+    switch (pinDetail.category) {
+        case 'Formal':
+            points = 50;
+            break;
+        case 'Festive':
+            points = 30;
+            break;
+        case 'Spirit Week':
+            points = 10;
+            break;
+        case 'Sports':
+            points = 20;
+            break;
+        case 'Field Trip':
+            points = 10;
+            break;
+        case 'Social':
+            points = 25;
+            break;
+        case 'Fundraiser':
+            points = 15;
+            break;
+        default:
+            points = 0;
+    }
+    const updateUserPoints = () => {
+        console.log(user.points)
+        console.log(points)
+        // fck it just hard code this sht
+    };
+
     return (
         <>
             {pinDetail && (
@@ -80,7 +111,18 @@ const PinDetail = ({ user }) => {
                                     <MdDownloadForOffline />
                                 </a>
                             </div>
-                            {/* right side empty, maybe put save button */}
+                            <div>
+                                <button
+                                    onClick={updateUserPoints}
+                                    type="button"
+                                    className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
+                                >
+                                    Get Points
+                                </button>
+                            </div>
+                            <div>
+                                <p>{points} points</p>
+                            </div>
                         </div>
                         <div>
                             <h1 className="text-4xl font-bold break-words mt-3">

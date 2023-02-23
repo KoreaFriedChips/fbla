@@ -12,6 +12,24 @@ export default {
             name: 'image',
             title: 'Image',
             type: 'string',
+        },
+        {
+            name: 'admin',
+            title: 'Admin',
+            type: 'boolean',
+            initialValue: false
+        },
+        {
+            name: 'points',
+            title: 'Points',
+            type: 'number',
+            initialValue: 0
+        },
+        {
+            name: 'grade',
+            title: 'Grade',
+            type: 'number',
+            initialValue: 0
         }
     ]
 }

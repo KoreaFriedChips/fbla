@@ -1,57 +1,125 @@
 export const categories = [
-    {
-        name: 'Cars',
-        image: 'https://i.pinimg.com/750x/eb/47/44/eb4744eaa3b3ccd89749fa3470e2b0de.jpg',
-    },
-    {
-        name: 'Fitness',
-        image: 'https://i.pinimg.com/236x/25/14/29/251429345940a47490cc3d47dfe0a8eb.jpg',
-    },
-    {
-        name: 'Wallpaper',
-        image: 'https://i.pinimg.com/236x/03/48/b6/0348b65919fcbe1e4f559dc4feb0ee13.jpg',
-    },
-    {
-        name: 'Websites',
-        image: 'https://i.pinimg.com/750x/66/b1/29/66b1296d36598122e6a4c5452b5a7149.jpg',
-    },
-    {
-        name: 'Photo',
-        image: 'https://i.pinimg.com/236x/72/8c/b4/728cb43f48ca762a75da645c121e5c57.jpg',
-    },
-    {
-        name: 'Food',
-        image: 'https://i.pinimg.com/236x/7d/ef/15/7def15ac734837346dac01fad598fc87.jpg',
-    },
-    {
-        name: 'Nature',
-        image: 'https://i.pinimg.com/236x/b9/82/d4/b982d49a1edd984c4faef745fd1f8479.jpg',
-    },
-    {
-        name: 'Art',
-        image: 'https://i.pinimg.com/736x/f4/e5/ba/f4e5ba22311039662dd253be33bf5f0e.jpg',
-    }, {
-        name: 'Travel',
-        image: 'https://i.pinimg.com/236x/fa/95/98/fa95986f2c408098531ca7cc78aee3a4.jpg',
-    },
-    {
-        name: 'Quotes',
-        image: 'https://i.pinimg.com/236x/46/7c/17/467c17277badb00b638f8ec4da89a358.jpg',
-    }, {
-        name: 'Cats',
-        image: 'https://i.pinimg.com/236x/6c/3c/52/6c3c529e8dadc7cffc4fddedd4caabe1.jpg',
-    }, {
-        name: 'Dogs',
-        image: 'https://i.pinimg.com/236x/1b/c8/30/1bc83077e363db1a394bf6a64b071e9f.jpg',
-    },
-    {
-        name: 'Others',
-        image: 'https://i.pinimg.com/236x/2e/63/c8/2e63c82dfd49aca8dccf9de3f57e8588.jpg',
-    },
+  {
+    name: 'Formal',
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80',
+  },
+  {
+    name: 'Festive',
+    image: 'https://images.unsplash.com/photo-1573676047757-905630d8e3ab?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  },
+  {
+    name: 'Spirit Week',
+    image: 'https://images.unsplash.com/photo-1583511655826-05700d52f4d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80',
+  },
+  {
+    name: 'Sports',
+    image: 'https://images.unsplash.com/photo-1541252260730-0412e8e2108e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=674&q=80',
+  },
+  {
+    name: 'Field Trips',
+    image: 'https://images.unsplash.com/photo-1613688263142-67f1e0c25ef1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  },
+  {
+    name: 'Social',
+    image: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+  },
+  {
+    name: 'Fundraisers',
+    image: 'https://plus.unsplash.com/premium_photo-1661775317533-2163ba4dbc93?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1748&q=80',
+  },
+];
+
+export const ranking = [
+  {
+    name: 'Person 1',
+    image: 'https://image.shutterstock.com/mosaic_250/287881/1768126784/stock-photo-young-handsome-man-with-beard-wearing-casual-sweater-and-glasses-over-blue-background-happy-face-1768126784.jpg',
+    rank: 1,
+    points: 300
+  },
+  {
+    name: 'Person 2',
+    image: 'https://media.istockphoto.com/id/957333242/photo/portrait-of-thoughtful-handsome-man-with-black-glasses-in-casual-style-thinking.jpg?s=612x612&w=0&k=20&c=EsTcqu9_pbvW59-DLhYZrhtTzxRy_6jqGfPERmesOx8=',
+    rank: 2,
+    points: 275
+  },
+  {
+    name: 'Person 3',
+    image: 'https://thumbs.dreamstime.com/b/young-arab-man-beard-wearing-glasses-arms-crossed-gesture-looking-camera-blowing-kiss-being-lovely-sexy-238659869.jpg',
+    rank: 3,
+    points: 250
+  },
+  {
+    name: 'Person 4',
+    image: 'https://thumbs.dreamstime.com/b/young-hispanic-man-wearing-casual-clothes-glasses-winking-looking-camera-sexy-expression-cheerful-happy-face-220599687.jpg',
+    rank: 4,
+    points: 225
+  },
+  {
+    name: 'Person 5',
+    image: 'https://thumbs.dreamstime.com/b/hispanic-man-beard-wearing-business-shirt-glasses-smiling-cheerful-presenting-pointing-palm-hand-looking-camera-235195045.jpg',
+    rank: 5,
+    points: 200
+  },
+  {
+    name: 'Person 6',
+    image: 'https://thumbs.dreamstime.com/b/young-hispanic-man-wearing-casual-clothes-smiling-laughing-hard-out-loud-funny-crazy-joke-hands-body-young-212532409.jpg',
+    rank: 6,
+    points: 175
+  },
+  {
+    name: 'Person 7',
+    image: 'https://thumbs.dreamstime.com/b/man-pointing-to-themselves-handsome-smiling-isolated-over-gray-background-71661028.jpg',
+    rank: 7,
+    points: 150
+  },
+  {
+    name: 'Person 8',
+    image: 'https://thumbs.dreamstime.com/b/guy-approves-your-perfect-choice-cheerful-good-looking-man-t-shirt-showing-okay-gesture-like-something-smiling-as-agree-accept-164239230.jpg',
+    rank: 8,
+    points: 125
+  }, {
+    name: 'Person 9',
+    image: 'https://thumbs.dreamstime.com/b/young-black-man-doing-victory-sign-peace-gesture-winking-looking-camera-sexy-expression-cheerful-happy-face-220079113.jpg',
+    rank: 9,
+    points: 100
+  }, {
+    name: 'Person 10',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO-hn0Y_MwW1MnLKa5FL8n7PVDDJMZMOpUAuFtiSn9_OR3INzUzUl1BPP_yARSibDox9M&usqp=CAU',
+    rank: 10,
+    points: 75
+  },
+];
+
+export const prizes = [
+  {
+    name: 'School Yearbook',
+    image: 'https://store.georgiaprinters.com/GetImage.ashx?Path=%7E%2FAssets%2FProductImages%2FTJA_no_Name.jpg&maintainAspectRatio=true',
+    points: 300
+  },
+  {
+    name: '$25 Coco Giftcard',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSZZY0cqo2WqSHzA9DZ6V9PaDDwMEiQ3DFqQ&usqp=CAU',
+    points: 250
+  },
+  {
+    name: 'School T-shirt',
+    image: 'https://m.media-amazon.com/images/I/71GOL59E6vL._AC_UL1500_.jpg',
+    points: 150
+  },
+  {
+    name: '$15 KFC Giftcard',
+    image: 'https://res.cloudinary.com/gift-card-granny/image/upload/f_auto/ar_79:50,c_scale,w_237/v1/GCG/merchants/kfc-gift-card?_a=AAADKDP',
+    points: 150
+  },
+  {
+    name: 'School Water Bottle',
+    image: 'http://static1.squarespace.com/static/54cfb9f9e4b092432af5d5b6/618e9c4e1bde49092bbde756/618ea05e859b5879d654e502/1636737133333/Water+bottle.png?format=1500w',
+    points: 100
+  },
 ];
 
 export const pinDetailQuery = (pinId) => {
-    const query = `*[_type == "pin" && _id == '${pinId}']{
+  const query = `*[_type == "pin" && _id == '${pinId}']{
       image{
         asset->{
           url
@@ -84,11 +152,11 @@ export const pinDetailQuery = (pinId) => {
         },
       }
     }`
-    return query
+  return query
 }
 
 export const pinDetailMorePinQuery = (pin) => {
-    const query = `*[_type == "pin" && category == '${pin.category}' && _id != '${pin._id}' ]{
+  const query = `*[_type == "pin" && category == '${pin.category}' && _id != '${pin._id}' ]{
       image{
         asset->{
           url
@@ -110,11 +178,11 @@ export const pinDetailMorePinQuery = (pin) => {
         },
       },
     }`
-    return query
+  return query
 }
 
 export const searchQuery = (searchTerm) => {
-    const query = `*[_type == "pin" && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*']{
+  const query = `*[_type == "pin" && title match '${searchTerm}*' || category match '${searchTerm}*' || about match '${searchTerm}*']{
         image {
             asset -> {
                 url
@@ -136,7 +204,7 @@ export const searchQuery = (searchTerm) => {
             },
         },
     }`
-    return query
+  return query
 }
 export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
     image {
@@ -162,12 +230,12 @@ export const feedQuery = `*[_type == "pin"] | order(_createdAt desc) {
 } `
 
 export const userQuery = (userId) => {
-    const query = `*[_type == "user" && _id == '${userId}']`;
-    return query;
+  const query = `*[_type == "user" && _id == '${userId}']`;
+  return query;
 };
 
 export const userCreatedPinsQuery = (userId) => {
-    const query = `*[ _type == 'pin' && userId == '${userId}'] | order(_createdAt desc){
+  const query = `*[ _type == 'pin' && userId == '${userId}'] | order(_createdAt desc){
       image{
         asset->{
           url
@@ -188,11 +256,11 @@ export const userCreatedPinsQuery = (userId) => {
         },
       },
     }`;
-    return query;
+  return query;
 };
 
 export const userSavedPinsQuery = (userId) => {
-    const query = `*[_type == 'pin' && '${userId}' in save[].userId ] | order(_createdAt desc) {
+  const query = `*[_type == 'pin' && '${userId}' in save[].userId ] | order(_createdAt desc) {
       image{
         asset->{
           url
@@ -213,5 +281,5 @@ export const userSavedPinsQuery = (userId) => {
         },
       },
     }`;
-    return query;
+  return query;
 };

@@ -9,7 +9,6 @@ import comment from './comment'
 import postedBy from './postedBy'
 import save from './save'
 
-
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
