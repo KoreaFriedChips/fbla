@@ -29,7 +29,7 @@ const Sidebar = ({ closeToggle, user }) => {
                     <div class="h-256 group">
                         <div class="flex flex-col overflow-hidden gap-3 h-10 duration-200  group-hover:h-96">
                             <Link to={`/winners`} className="flex gap-2 mt-2 items-center">
-                                <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">This Month's Winners</h3>
+                                <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">This Quarter's Winners</h3>
                             </Link>
                             {winners.slice(0, winners.length).map((winner) => (
                                 <NavLink
@@ -44,7 +44,7 @@ const Sidebar = ({ closeToggle, user }) => {
                             ))}
                         </div>
                         <div class="flex flex-col overflow-hidden gap-3 h-10 duration-200  group-hover:h-96">
-                            <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">This Month's Prizes</h3>
+                            <h3 className="mt-3 px-5 text-base 2xl:text-xl font-bold">This Quarter's Prizes</h3>
                             {prizes.slice(0, prizes.length).map((prize) => (
                                 <NavLink
                                     to={`/`}

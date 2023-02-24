@@ -17,20 +17,20 @@ const Winners = () => {
                     </div>
                     <div>
                         <h1 className="font-bold text-3xl text-center mt-3">
-                            Monthly Report
+                            Quartly Report
                         </h1>
                     </div>
-                    <div className="flex flex-row space-between justify-evenly items-center">
+                    <div className="columns-4">
                         <p className='font-bold text-xl mt-3 text-center'>Grade 9</p>
                         <p className='font-bold text-xl mt-3 text-center'>Grade 10</p>
                         <p className='font-bold text-xl mt-3 text-center'>Grade 11</p>
                         <p className='font-bold text-xl mt-3 text-center'>Grade 12</p>
                     </div>
-                    <div className='flex flex-wrap justify-center'>
+                    <div className='columns-4'>
                         {ranking.slice(0, ranking.length).map((rank) => (
                             <NavLink
                                 to={`/`}
-                                className={'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize mt-3 mr-3'}
+                                className={'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize mt-3'}
                                 key={rank.name}
                             >
                                 <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
