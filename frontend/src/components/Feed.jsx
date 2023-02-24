@@ -33,7 +33,7 @@ const Feed = () => {
         return <Spinner message="We are adding new ideas to your feed!" />
 
     if (!pins?.length)
-        return <h2 className='flex justify-center font-semibold'>No Pins Yet. Be the first to post in this category!</h2>
+        return <h2 className='flex justify-center font-semibold'>No Events Yet. Be the first to post in this category!</h2>
 
     return (
         <div>

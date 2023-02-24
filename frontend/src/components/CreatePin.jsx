@@ -148,12 +148,12 @@ const CreatePin = ({ user }) => {
                         type="text"
                         value={about}
                         onChange={(e) => setAbout(e.target.value)}
-                        placeholder="Tell everyone what your Pin is about"
+                        placeholder="Tell everyone what your event is about"
                         className="outline-none text-base sm:text-lg border-b-2 border-gray-200 p-2"
                     />
                     <div className="flex flex-col">
                         <div>
-                            <p className="mb-2 font-semibold text:lg sm:text-xl">Choose Pin Category</p>
+                            <p className="mb-2 font-semibold text:lg sm:text-xl">Choose Event Category</p>
                             <select
                                 onChange={(e) => {
                                     setCategory(e.target.value);
@@ -174,7 +174,7 @@ const CreatePin = ({ user }) => {
                                 onClick={savePin}
                                 className="bg-red-500 text-white font-bold p-2 rounded-full w-28 outline-none"
                             >
-                                Save Pin
+                                Post Event
                             </button>
                         </div>
                     </div>
