@@ -118,6 +118,34 @@ export const prizes = [
   },
 ];
 
+export const winners = [
+  {
+    name: 'Person 1',
+    image: 'https://image.shutterstock.com/mosaic_250/287881/1768126784/stock-photo-young-handsome-man-with-beard-wearing-casual-sweater-and-glasses-over-blue-background-happy-face-1768126784.jpg',
+    grade: 9
+  },
+  {
+    name: 'Person 2',
+    image: 'https://media.istockphoto.com/id/957333242/photo/portrait-of-thoughtful-handsome-man-with-black-glasses-in-casual-style-thinking.jpg?s=612x612&w=0&k=20&c=EsTcqu9_pbvW59-DLhYZrhtTzxRy_6jqGfPERmesOx8=',
+    grade: 10
+  },
+  {
+    name: 'Person 3',
+    image: 'https://thumbs.dreamstime.com/b/young-arab-man-beard-wearing-glasses-arms-crossed-gesture-looking-camera-blowing-kiss-being-lovely-sexy-238659869.jpg',
+    grade: 11
+  },
+  {
+    name: 'Person 4',
+    image: 'https://thumbs.dreamstime.com/b/young-hispanic-man-wearing-casual-clothes-glasses-winking-looking-camera-sexy-expression-cheerful-happy-face-220599687.jpg',
+    grade: 12
+  },
+  {
+    name: 'Person 5',
+    image: 'https://thumbs.dreamstime.com/b/hispanic-man-beard-wearing-business-shirt-glasses-smiling-cheerful-presenting-pointing-palm-hand-looking-camera-235195045.jpg',
+    grade: 9
+  },
+];
+
 export const pinDetailQuery = (pinId) => {
   const query = `*[_type == "pin" && _id == '${pinId}']{
       image{
