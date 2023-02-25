@@ -58,7 +58,7 @@ const Home = () => {
                 <Routes>
                     <Route path="/user-profile/:userId" element={<UserProfile />} />
                     <Route path="/*" element={<Pins user={user && user} />} />
-                    <Route path="/winners" element={<Winners />} />
+                    <Route path="/winners" element={<Winners user={user && user} />} />
                 </Routes>
             </div>
         </div>

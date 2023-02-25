@@ -30,7 +30,7 @@ const Search = ({ searchTerm }) => {
             {loading && <Spinner message="Searching pins" />}
             {pins?.length !== 0 && <MasonryLayout pins={pins} />}
             {pins?.length === 0 && searchTerm !== '' && !loading && (
-                <div className="mt-10 text-center text-xl ">No Posts Found!</div>
+                <div className="mt-10 text-center text-xl ">No Events Found!</div>
             )}
         </div>
     )

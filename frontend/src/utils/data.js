@@ -34,59 +34,69 @@ export const ranking = [
     name: 'Person 1',
     image: 'https://image.shutterstock.com/mosaic_250/287881/1768126784/stock-photo-young-handsome-man-with-beard-wearing-casual-sweater-and-glasses-over-blue-background-happy-face-1768126784.jpg',
     rank: 1,
-    points: 300
+    points: 300,
+    grade: 9
   },
   {
     name: 'Person 2',
     image: 'https://media.istockphoto.com/id/957333242/photo/portrait-of-thoughtful-handsome-man-with-black-glasses-in-casual-style-thinking.jpg?s=612x612&w=0&k=20&c=EsTcqu9_pbvW59-DLhYZrhtTzxRy_6jqGfPERmesOx8=',
     rank: 2,
-    points: 275
+    points: 275,
+    grade: 10
   },
   {
     name: 'Person 3',
     image: 'https://thumbs.dreamstime.com/b/young-arab-man-beard-wearing-glasses-arms-crossed-gesture-looking-camera-blowing-kiss-being-lovely-sexy-238659869.jpg',
     rank: 3,
-    points: 250
+    points: 250,
+    grade: 11
   },
   {
     name: 'Person 4',
     image: 'https://thumbs.dreamstime.com/b/young-hispanic-man-wearing-casual-clothes-glasses-winking-looking-camera-sexy-expression-cheerful-happy-face-220599687.jpg',
     rank: 4,
-    points: 225
+    points: 225,
+    grade: 12
   },
   {
     name: 'Person 5',
     image: 'https://thumbs.dreamstime.com/b/hispanic-man-beard-wearing-business-shirt-glasses-smiling-cheerful-presenting-pointing-palm-hand-looking-camera-235195045.jpg',
     rank: 5,
-    points: 200
+    points: 200,
+    grade: 9
   },
   {
     name: 'Person 6',
     image: 'https://thumbs.dreamstime.com/b/young-hispanic-man-wearing-casual-clothes-smiling-laughing-hard-out-loud-funny-crazy-joke-hands-body-young-212532409.jpg',
     rank: 6,
-    points: 175
+    points: 175,
+    grade: 10
   },
   {
     name: 'Person 7',
     image: 'https://thumbs.dreamstime.com/b/man-pointing-to-themselves-handsome-smiling-isolated-over-gray-background-71661028.jpg',
     rank: 7,
-    points: 150
+    points: 150,
+    grade: 11
   },
   {
     name: 'Person 8',
     image: 'https://thumbs.dreamstime.com/b/guy-approves-your-perfect-choice-cheerful-good-looking-man-t-shirt-showing-okay-gesture-like-something-smiling-as-agree-accept-164239230.jpg',
     rank: 8,
-    points: 125
+    points: 125,
+    grade: 12
   }, {
     name: 'Person 9',
     image: 'https://thumbs.dreamstime.com/b/young-black-man-doing-victory-sign-peace-gesture-winking-looking-camera-sexy-expression-cheerful-happy-face-220079113.jpg',
     rank: 9,
-    points: 100
+    points: 100,
+    grade: 9
   }, {
     name: 'Person 10',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO-hn0Y_MwW1MnLKa5FL8n7PVDDJMZMOpUAuFtiSn9_OR3INzUzUl1BPP_yARSibDox9M&usqp=CAU',
     rank: 10,
-    points: 75
+    points: 75,
+    grade: 10
   },
 ];
 

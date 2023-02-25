@@ -112,7 +112,7 @@ const UserProfile = () => {
                             }}
                             className={`${activeBtn === 'created' ? activeBtnStyles : notActiveBtnStyles}`}
                         >
-                            Posts
+                            Events
                         </button>
                         <button
                             type="button"
@@ -132,7 +132,7 @@ const UserProfile = () => {
 
                     {pins?.length === 0 && (
                         <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
-                            No Posts Found!
+                            No Events Found!
                         </div>
                     )}
                 </div>
@@ -203,7 +203,7 @@ const UserProfile = () => {
 
                     {pins?.length === 0 && (
                         <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
-                            No Posts Found!
+                            No Events Found!
                         </div>
                     )}
                 </div>
