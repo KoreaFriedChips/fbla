@@ -18,6 +18,14 @@ const CreatePin = ({ user }) => {
     const [wrongImageType, setWrongImageType] = useState(false);
     const navigate = useNavigate();
 
+
+    const [errorNotif, setErrorNotif] = useState(false);
+    const errorMessage = "Error: It's the wrong file type";
+    function toggleError() {
+        console.log(errorMessage)
+        setErrorNotif(true);
+    }
+
     const uploadImage = (e) => {
         const { type, name } = e.target.files[0];
         // uploading asset to sanity
@@ -36,6 +44,7 @@ const CreatePin = ({ user }) => {
         } else {
             setLoading(false);
             setWrongImageType(true);
+            toggleError()
         }
     };
 
@@ -71,6 +80,20 @@ const CreatePin = ({ user }) => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
+            {/* error alert */}
+            <div className="overflow-hidden ease-in-out duration 200" style={{ height: errorNotif ? "3.5rem" : "0" }}>
+                <div className="w-full bg-red-300 flex items-center justify-between p-3 rounded-lg">
+                    <p className="text-xl">{errorMessage} &#160;</p>
+                    <button
+                        className="text-xl font-bold"
+                        onClick={() => {
+                            setErrorNotif(false);
+                        }}
+                    >
+                        X
+                    </button>
+                </div>
+            </div>
             {fields && (
                 <p className="text-red-500 mb-5 text-xl transition-all duration-150 ease-in ">Please add all fields.</p>
             )}
@@ -81,9 +104,7 @@ const CreatePin = ({ user }) => {
                             <Spinner />
                         )}
                         {
-                            wrongImageType && (
-                                <p>It&apos;s wrong file type.</p>
-                            )
+                            wrongImageType
                         }
                         {!imageAsset ? (
                             // eslint-disable-next-line jsx-a11y/label-has-associated-control

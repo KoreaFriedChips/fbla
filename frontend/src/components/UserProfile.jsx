@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AiOutlineLogout } from 'react-icons/ai';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
 
 import { userCreatedPinsQuery, userQuery, userSavedPinsQuery } from '../utils/data';
@@ -8,7 +8,6 @@ import { client } from '../client';
 import MasonryLayout from './MasonryLayout';
 import Spinner from './Spinner';
 import { fetchUser } from '../utils/fetchUser';
-import logo from '../assets/djx.png';
 
 const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
 const notActiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
@@ -31,13 +30,13 @@ const UserProfile = () => {
     }, [userId]);
 
     useEffect(() => {
-        if (text === 'Created') {
+        if (text === 'Events') {
             const createdPinsQuery = userCreatedPinsQuery(userId);
 
             client.fetch(createdPinsQuery).then((data) => {
                 setPins(data);
             });
-        } else {
+        } else if (text === 'Joined') {
             const savedPinsQuery = userSavedPinsQuery(userId);
 
             client.fetch(savedPinsQuery).then((data) => {

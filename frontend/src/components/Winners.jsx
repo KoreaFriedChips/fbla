@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import WheelComponent from 'react-wheel-of-prizes';
 import { ranking } from '../utils/data';
@@ -27,13 +28,13 @@ const Winners = ({ user }) => {
         'Person 9',
     ]
     const [grade, setGrade] = useState(9);
-    const [segments, setSegments] = useState(grade9);
+    let [seg, setSeg] = useState(grade9);
 
 
     const wheelColours = () => {
         let arr = [];
         let colors = ["#EE4040", "#F0CF50", "#815CD1", "#3DA5E0", "#34A24F"];
-        segments.forEach((el) => {
+        seg.forEach((el) => {
             let color = colors.shift();
             arr.push(color);
             colors.push(color);
@@ -43,39 +44,102 @@ const Winners = ({ user }) => {
     };
     const segColors = wheelColours();
 
-    const onFinished = (winner) => {
-        console.log(winner)
+    const [successNotif, setSuccessNotif] = useState(false);
+    const [warningNotif, setWarningNotif] = useState(false);
+    const [errorNotif, setErrorNotif] = useState(false);
+    const successMessage = "Succesfully chosen a winner!";
+    const warningMessage = "warning";
+    const errorMessage = "error";
+    function toggleSuccess() {
+        setSuccessNotif(true);
     }
-    // let text = 'Pizza Party Event Joined';
-    // let popupOpen1 = true;
-    // let popupOpen2 = true;
+    function toggleWarning() {
+        setWarningNotif(true);
+    }
+    function toggleError() {
+        setErrorNotif(true);
+    }
 
-    // const togglePopup = () => {
-    //     popupOpen1 = !popupOpen1;
-    //     popupOpen2 = !popupOpen2;
-    // }
     const gradeNine = () => {
         setGrade(9);
-        setSegments(grade9)
     };
     const gradeTen = () => {
         setGrade(10);
-        setSegments(grade10)
     };
     const gradeEleven = () => {
         setGrade(11);
-        setSegments(grade11)
     };
     const gradeTwelve = () => {
         setGrade(12);
-        setSegments(grade12)
     };
+    useEffect(() => {
+        switch (grade) {
+            case 9:
+                setSeg(grade9)
+                break;
+            case 10:
+                setSeg(grade10)
+                break;
+            case 11:
+                setSeg(grade11)
+                break;
+            case 12:
+                setSeg(grade12)
+                break;
+            default:
+                setSeg(grade9)
+        }
+        console.log(seg);
+    }, [grade]);
 
     if (admin) {
         return (
+
             <div className="relative pb-2 h-full justify-center items-center">
                 <div className="flex flex-col pb-5">
                     <div className="relative flex flex-col mb-7">
+                        {/* positive alert */}
+                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: successNotif ? "3.5rem" : "0" }}>
+                            <div className="w-full bg-green-300 flex items-center justify-between p-3 rounded-lg">
+                                <p className="text-xl">{successMessage}</p>
+                                <button
+                                    className="text-xl"
+                                    onClick={() => {
+                                        setSuccessNotif(false);
+                                    }}
+                                >
+                                    X
+                                </button>
+                            </div>
+                        </div>
+                        {/* warning alert */}
+                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: warningNotif ? "3.5rem" : "0" }}>
+                            <div className="w-full bg-yellow-300 flex items-center justify-between p-3 rounded-lg">
+                                <p className="text-xl">{warningMessage}</p>
+                                <button
+                                    className="text-xl"
+                                    onClick={() => {
+                                        setWarningNotif(false);
+                                    }}
+                                >
+                                    X
+                                </button>
+                            </div>
+                        </div>
+                        {/* error alert */}
+                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: errorNotif ? "3.5rem" : "0" }}>
+                            <div className="w-full bg-red-300 flex items-center justify-between p-3 rounded-lg">
+                                <p className="text-xl">{errorMessage}</p>
+                                <button
+                                    className="text-xl"
+                                    onClick={() => {
+                                        setErrorNotif(false);
+                                    }}
+                                >
+                                    X
+                                </button>
+                            </div>
+                        </div>
                         <div className="flex flex-col justify-center items-center">
                             <img
                                 className=" w-full h-370 2xl:h-510 shadow-lg object-cover"
@@ -90,7 +154,8 @@ const Winners = ({ user }) => {
                         </div>
                         <div>
                             <Dropdown
-                                trigger={<button className='font-bold text-2xl text-center mb-2'>Grade {grade}</button>}
+                                trigger={
+                                    <button className='font-bold text-2xl text-center mb-2 ml-3 bg-sky-100 p-3 rounded-lg'>Grade {grade}</button>}
                                 menu={[
                                     <button onClick={gradeNine}>Grade 9</button>,
                                     <button onClick={gradeTen}>Grade 10</button>,
@@ -117,11 +182,11 @@ const Winners = ({ user }) => {
                         </div>
                         {/* select random winner with wheel animation + notification pop up, only admins*/}
                         <div className='mt-10 justify-center'>
-                            <WheelComponent
-                                segments={segments}
+                            < WheelComponent
+                                segments={seg}
                                 segColors={segColors}
                                 winningSegment={"8"}
-                                onFinished={(winner) => onFinished(winner)}
+                                onFinished={toggleSuccess}
                                 primaryColor='black'
                                 contrastColor='white'
                                 buttonText='Spin'
@@ -129,16 +194,6 @@ const Winners = ({ user }) => {
                             />
                         </div>
                     </div>
-                    {/* <div className={`${popupOpen1 ? 'h-3.5' : 'h-0'} ease-in-out duration 200`}>
-                        <div className="w-full bg-green-300 flex items-center justify-between p-3 rounded-lg">
-                            <p className="text-xl">{text}</p>
-                            <button
-                                className="text-xl"
-                                onClick={() => {
-                                    popupOpen1 = false;
-                                }}>X</button>
-                        </div>
-                    </div> */}
                 </div>
 
             </div >
@@ -186,6 +241,14 @@ const Winners = ({ user }) => {
             </div>
         )
     }
+    <style>
+        {`
+          .popup {
+            transition: height 0.5s ease-in-out;
+            overflow: hidden;
+          }
+        `}
+    </style>
 
 }
 
