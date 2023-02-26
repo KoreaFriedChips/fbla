@@ -11,6 +11,7 @@ const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 bo
 
 const Sidebar = ({ closeToggle, user }) => {
 
+    // close sidebar for mobile experience
     const handleCloseSidebar = () => {
         if (closeToggle) closeToggle(false)
     }

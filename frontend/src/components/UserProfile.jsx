@@ -12,6 +12,7 @@ import { fetchUser } from '../utils/fetchUser';
 const activeBtnStyles = 'bg-red-500 text-white font-bold p-2 rounded-full w-20 outline-none';
 const notActiveBtnStyles = 'bg-primary mr-4 text-black font-bold p-2 rounded-full w-20 outline-none';
 
+// show users stats (grade, points, events created, events joined)
 const UserProfile = () => {
 
     const [user, setUser] = useState();
@@ -22,6 +23,7 @@ const UserProfile = () => {
     const { userId } = useParams();
     const User = fetchUser();
 
+    // fetch user data from the backend
     useEffect(() => {
         const query = userQuery(userId);
         client.fetch(query).then((data) => {
@@ -29,6 +31,7 @@ const UserProfile = () => {
         });
     }, [userId]);
 
+    // change display based on events joined vs events created
     useEffect(() => {
         if (text === 'Events') {
             const createdPinsQuery = userCreatedPinsQuery(userId);
@@ -45,18 +48,21 @@ const UserProfile = () => {
         }
     }, [text, userId]);
 
+    // handle logout
     const logout = () => {
         localStorage.clear();
 
         navigate('/login');
     };
 
+    // loading spinner
     if (!user) {
         return <Spinner message="Loading profile" />;
     }
 
     console.log(user)
 
+    // only admins have the ability to create events, so we only show create and joined for admins otherwise only joined
     if (user.admin) {
         return (
             <div className="relative pb-2 h-full justify-center items-center">
@@ -128,7 +134,7 @@ const UserProfile = () => {
                     <div className="px-2">
                         <MasonryLayout pins={pins} />
                     </div>
-
+                    {/* handle if there are no events created/joined */}
                     {pins?.length === 0 && (
                         <div className="flex justify-center font-bold items-center w-full text-1xl mt-2">
                             No Events Found!

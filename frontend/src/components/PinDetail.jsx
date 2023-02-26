@@ -11,11 +11,13 @@ import Spinner from './Spinner';
 // maybe directly use alreadySave
 const PinDetail = ({ user }) => {
 
+    // success notification setup
     const [successNotif, setSuccessNotif] = useState(false);
     const successMessage = "Successfully joined the event!";
     function toggleSuccess() {
         setSuccessNotif(true);
     }
+    // warning notification setup
     const [warningNotif, setWarningNotif] = useState(false);
     const warningMessage = "Warning: your comment contains inappropriate language";
     function toggleWarning() {
@@ -27,6 +29,7 @@ const PinDetail = ({ user }) => {
     const [addingComment, setAddingComment] = useState(false);
     const { pinId } = useParams();
 
+    // from the backend grab the properties of the pin adn store it in pinDetail
     const fetchPinDetails = () => {
         let query = pinDetailQuery(pinId)
         if (query) {
@@ -47,6 +50,7 @@ const PinDetail = ({ user }) => {
         fetchPinDetails()
     }, [pinId])
 
+    // uploading comments in the backend, filter comments to not allow profanity, ensuring school safe user experience
     const addComment = () => {
         if (comment) {
             if (comment.includes("crap")) {
@@ -68,9 +72,11 @@ const PinDetail = ({ user }) => {
         }
     };
 
+    // loading spinner during wait time
     if (!pinDetail)
         return <Spinner message="Loading pin..." />
 
+    // dynamically assign point values to categories
     let points = 0;
     switch (pinDetail.category) {
         case 'Formal':
@@ -97,13 +103,11 @@ const PinDetail = ({ user }) => {
         default:
             points = 0;
     }
+    // update user points when event is joined
     const updateUserPoints = () => {
         console.log(user.points)
         console.log(points)
-        // fck it just hard code this sht
     };
-
-
 
     return (
         <>

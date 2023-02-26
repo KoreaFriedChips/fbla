@@ -1,5 +1,6 @@
 import React, { useState, cloneElement } from 'react'
 
+// dropdown menu used in the winners page to look through each grade and see how many points each person has
 const Dropdown = ({ trigger, menu }) => {
     const [open, setOpen] = useState(false);
 

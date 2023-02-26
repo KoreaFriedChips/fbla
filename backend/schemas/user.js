@@ -1,3 +1,4 @@
+// user has properties like a name, profile picture, admin, points and grade
 export default {
     name: 'user',
     title: 'User',

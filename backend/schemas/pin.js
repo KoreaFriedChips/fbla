@@ -1,3 +1,4 @@
+// create "pin"/event and its properties
 export default {
     name: 'pin',
     title: 'Pin',

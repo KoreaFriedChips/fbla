@@ -10,6 +10,7 @@ import { client } from '../client'
 import logo from '../assets/djx.png'
 import { fetchUser } from '../utils/fetchUser';
 
+// home page layout including sidebar, navbar, access to user profile
 const Home = () => {
 
     const [toggleSidebar, setToggleSidebar] = useState(false);

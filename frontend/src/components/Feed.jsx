@@ -12,6 +12,7 @@ const Feed = () => {
     const [loading, setLoading] = useState(false)
     const { categoryId } = useParams()
 
+    // when selecting a category, only display events in that category 
     useEffect(() => {
         if (categoryId) {
             setLoading(true);
@@ -29,13 +30,15 @@ const Feed = () => {
         }
     }, [categoryId]);
 
+    // handle loading
     if (loading)
         return <Spinner message="We are adding new ideas to your feed!" />
-
+    // handle if there are no events in that category
     if (!pins?.length)
         return <h2 className='flex justify-center font-semibold'>No Events Yet. Be the first to post in this category!</h2>
 
     return (
+        // use masonry layout to nicely display all events to the user
         <div>
             {pins && (<MasonryLayout pins={pins} />)}
         </div>

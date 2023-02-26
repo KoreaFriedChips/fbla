@@ -9,6 +9,7 @@ import { client } from '../client'
 
 const Login = () => {
     const navigate = useNavigate();
+    // login using email, if the user doesn't exist create a user profile for them in the backend
     const responseGoogle = (response) => {
         // console.log(response)
         localStorage.setItem('user', JSON.stringify(response.profileObj))
@@ -30,6 +31,7 @@ const Login = () => {
     return (
         <div className='flex justify-start items-center flex-col h-screen'>
             <div className="relative w-full h-full">
+                {/* background */}
                 <video
                     src={introVideo}
                     type='video/mp4'
@@ -44,6 +46,7 @@ const Login = () => {
                         <img src={logo} width='200px' alt="logo" />
                     </div>
                     <div className="shadow-2xl">
+                        {/* google login */}
                         <GoogleLogin
                             clientId={`${process.env.REACT_APP_GOOGLE_API_TOKEN}`}
                             render={(renderProps) => (

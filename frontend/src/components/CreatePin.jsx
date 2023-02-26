@@ -7,6 +7,7 @@ import { categories } from '../utils/data';
 import { client } from '../client';
 import Spinner from './Spinner';
 
+// allow admins to create pins by with a title, about, image, and categroy
 const CreatePin = ({ user }) => {
     const [title, setTitle] = useState('');
     const [about, setAbout] = useState('');
@@ -18,14 +19,14 @@ const CreatePin = ({ user }) => {
     const [wrongImageType, setWrongImageType] = useState(false);
     const navigate = useNavigate();
 
-
+    // error notification for when admins upload an invalid file
     const [errorNotif, setErrorNotif] = useState(false);
-    const errorMessage = "Error: It's the wrong file type";
+    const [errorMessage, setErrorMessage] = useState();
     function toggleError() {
         console.log(errorMessage)
         setErrorNotif(true);
     }
-
+    // check if the user uploads a valid image
     const uploadImage = (e) => {
         const { type, name } = e.target.files[0];
         // uploading asset to sanity
@@ -42,12 +43,14 @@ const CreatePin = ({ user }) => {
                     console.log('Upload failed:', error.message);
                 });
         } else {
+            // if not valid, give error message
             setLoading(false);
             setWrongImageType(true);
+            setErrorMessage("Error: It's the wrong file type")
             toggleError()
         }
     };
-
+    // save the created event into the backend (sanity) & check if the admin entered in all fields
     const savePin = () => {
         if (title && about && imageAsset?._id && category) {
             const doc = {
@@ -73,7 +76,10 @@ const CreatePin = ({ user }) => {
                 navigate('/');
             });
         } else {
+            // if admin didn't fill all fields, give an error message
             setFields(true);
+            setErrorMessage("Error: Please fill in all fields")
+            toggleError()
             setTimeout(() => { setFields(false); }, 2000,);
         }
     };

@@ -9,6 +9,7 @@ const Search = ({ searchTerm }) => {
     const [pins, setPins] = useState();
     const [loading, setLoading] = useState(false);
 
+    // Search: fetches all the pins and looks for terms from the title, about, and/or category that are the same with the search term
     useEffect(() => {
         if (searchTerm !== '') {
             setLoading(true);
@@ -27,6 +28,7 @@ const Search = ({ searchTerm }) => {
 
     return (
         <div>
+            {/* spinner for when searching pins are loading and the user doesn't see just blank */}
             {loading && <Spinner message="Searching pins" />}
             {pins?.length !== 0 && <MasonryLayout pins={pins} />}
             {pins?.length === 0 && searchTerm !== '' && !loading && (

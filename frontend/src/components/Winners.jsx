@@ -12,7 +12,10 @@ const Winners = ({ user }) => {
     let grade9 = [
         'Person 1',
         'Person 5',
-        'Person 9'
+        'Person 9',
+        'Alex Xu',
+        'Bill Jiang',
+        'Bryan Deng'
     ]
     let grade10 = [
         'Person 2',
@@ -26,9 +29,10 @@ const Winners = ({ user }) => {
     let grade12 = [
         'Person 4',
         'Person 9',
+        'Alex Xu'
     ]
     const [grade, setGrade] = useState(9);
-    let [seg, setSeg] = useState(grade9);
+    const [seg, setSeg] = useState(grade9);
 
 
     const wheelColours = () => {
@@ -45,52 +49,31 @@ const Winners = ({ user }) => {
     const segColors = wheelColours();
 
     const [successNotif, setSuccessNotif] = useState(false);
-    const [warningNotif, setWarningNotif] = useState(false);
-    const [errorNotif, setErrorNotif] = useState(false);
     const successMessage = "Succesfully chosen a winner!";
-    const warningMessage = "warning";
-    const errorMessage = "error";
     function toggleSuccess() {
         setSuccessNotif(true);
-    }
-    function toggleWarning() {
-        setWarningNotif(true);
-    }
-    function toggleError() {
-        setErrorNotif(true);
     }
 
     const gradeNine = () => {
         setGrade(9);
+        setSeg(grade9)
+        console.log(seg)
     };
     const gradeTen = () => {
         setGrade(10);
+        setSeg(grade10)
+        console.log(seg)
     };
     const gradeEleven = () => {
         setGrade(11);
+        setSeg(grade11)
+        console.log(seg)
     };
     const gradeTwelve = () => {
         setGrade(12);
+        setSeg(grade12)
+        console.log(seg)
     };
-    useEffect(() => {
-        switch (grade) {
-            case 9:
-                setSeg(grade9)
-                break;
-            case 10:
-                setSeg(grade10)
-                break;
-            case 11:
-                setSeg(grade11)
-                break;
-            case 12:
-                setSeg(grade12)
-                break;
-            default:
-                setSeg(grade9)
-        }
-        console.log(seg);
-    }, [grade]);
 
     if (admin) {
         return (
@@ -98,48 +81,6 @@ const Winners = ({ user }) => {
             <div className="relative pb-2 h-full justify-center items-center">
                 <div className="flex flex-col pb-5">
                     <div className="relative flex flex-col mb-7">
-                        {/* positive alert */}
-                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: successNotif ? "3.5rem" : "0" }}>
-                            <div className="w-full bg-green-300 flex items-center justify-between p-3 rounded-lg">
-                                <p className="text-xl">{successMessage}</p>
-                                <button
-                                    className="text-xl"
-                                    onClick={() => {
-                                        setSuccessNotif(false);
-                                    }}
-                                >
-                                    X
-                                </button>
-                            </div>
-                        </div>
-                        {/* warning alert */}
-                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: warningNotif ? "3.5rem" : "0" }}>
-                            <div className="w-full bg-yellow-300 flex items-center justify-between p-3 rounded-lg">
-                                <p className="text-xl">{warningMessage}</p>
-                                <button
-                                    className="text-xl"
-                                    onClick={() => {
-                                        setWarningNotif(false);
-                                    }}
-                                >
-                                    X
-                                </button>
-                            </div>
-                        </div>
-                        {/* error alert */}
-                        <div className="overflow-hidden ease-in-out duration 200" style={{ height: errorNotif ? "3.5rem" : "0" }}>
-                            <div className="w-full bg-red-300 flex items-center justify-between p-3 rounded-lg">
-                                <p className="text-xl">{errorMessage}</p>
-                                <button
-                                    className="text-xl"
-                                    onClick={() => {
-                                        setErrorNotif(false);
-                                    }}
-                                >
-                                    X
-                                </button>
-                            </div>
-                        </div>
                         <div className="flex flex-col justify-center items-center">
                             <img
                                 className=" w-full h-370 2xl:h-510 shadow-lg object-cover"
@@ -180,7 +121,20 @@ const Winners = ({ user }) => {
                                 return null;
                             })}
                         </div>
-                        {/* select random winner with wheel animation + notification pop up, only admins*/}
+                        {/* positive alert */}
+                        <div className="overflow-hidden ease-in-out duration 200 mt-3" style={{ height: successNotif ? "3.5rem" : "0" }}>
+                            <div className="w-full bg-green-300 flex items-center justify-between p-3 rounded-lg">
+                                <p className="text-xl">{successMessage}</p>
+                                <button
+                                    className="text-xl"
+                                    onClick={() => {
+                                        setSuccessNotif(false);
+                                    }}
+                                >
+                                    X
+                                </button>
+                            </div>
+                        </div>
                         <div className='mt-10 justify-center'>
                             < WheelComponent
                                 segments={seg}
@@ -241,15 +195,6 @@ const Winners = ({ user }) => {
             </div>
         )
     }
-    <style>
-        {`
-          .popup {
-            transition: height 0.5s ease-in-out;
-            overflow: hidden;
-          }
-        `}
-    </style>
-
 }
 
 export default Winners
