@@ -97,7 +97,7 @@ const PinDetail = ({ user }) => {
         case 'Social':
             points = 25;
             break;
-        case 'Fundraiser':
+        case 'Fundraisers':
             points = 15;
             break;
         default:

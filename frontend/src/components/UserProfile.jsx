@@ -39,7 +39,7 @@ const UserProfile = () => {
             client.fetch(createdPinsQuery).then((data) => {
                 setPins(data);
             });
-        } else if (text === 'Joined') {
+        } else {
             const savedPinsQuery = userSavedPinsQuery(userId);
 
             client.fetch(savedPinsQuery).then((data) => {

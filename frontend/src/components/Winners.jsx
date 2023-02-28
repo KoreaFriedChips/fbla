@@ -77,7 +77,6 @@ const Winners = ({ user }) => {
 
     if (admin) {
         return (
-
             <div className="relative pb-2 h-full justify-center items-center">
                 <div className="flex flex-col pb-5">
                     <div className="relative flex flex-col mb-7">
@@ -135,7 +134,7 @@ const Winners = ({ user }) => {
                                 </button>
                             </div>
                         </div>
-                        <div className='mt-10 justify-center'>
+                        <div className='mt-10 justify-center items-center' style={{ margin: "0% 12%" }}>
                             < WheelComponent
                                 segments={seg}
                                 segColors={segColors}
@@ -169,30 +168,38 @@ const Winners = ({ user }) => {
                                 Quartly Report
                             </h1>
                         </div>
-                        <div className="columns-4">
-                            <p className='font-bold text-xl mt-3 text-center'>Grade 9</p>
-                            <p className='font-bold text-xl mt-3 text-center'>Grade 10</p>
-                            <p className='font-bold text-xl mt-3 text-center'>Grade 11</p>
-                            <p className='font-bold text-xl mt-3 text-center'>Grade 12</p>
+                        <div>
+                            <Dropdown
+                                trigger={
+                                    <button className='font-bold text-2xl text-center mb-2 ml-3 bg-sky-100 p-3 rounded-lg'>Grade {grade}</button>}
+                                menu={[
+                                    <button onClick={gradeNine}>Grade 9</button>,
+                                    <button onClick={gradeTen}>Grade 10</button>,
+                                    <button onClick={gradeEleven}>Grade 11</button>,
+                                    <button onClick={gradeTwelve}>Grade 12</button>,
+                                ]}
+                            />
                         </div>
-                        <div className='columns-4'>
-                            {ranking.slice(0, ranking.length).map((rank) => (
-                                <NavLink
-                                    to={`/`}
-                                    className={'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize mt-3'}
-                                    key={rank.name}
-                                >
-                                    <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" alt="img" />
-                                    {rank.name} | {rank.points}
-                                </NavLink>
-                            ))}
+                        <div className=''>
+                            {ranking.slice(0, ranking.length).map((rank) => {
+                                if (grade === rank.grade)
+                                    return (
+                                        <NavLink
+                                            to={`/`}
+                                            className={'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize mt-3'}
+                                            key={rank.name}
+                                        >
+                                            <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" alt="person" />
+                                            {rank.name} | {rank.points}
+                                        </NavLink>
+                                    );
+                                return null;
+                            })}
                         </div>
-
                     </div>
-
                 </div>
 
-            </div>
+            </div >
         )
     }
 }

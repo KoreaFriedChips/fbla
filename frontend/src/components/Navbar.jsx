@@ -22,18 +22,10 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                         <div className="flex flex-col justify-center items-center">
                             <img
                                 className=" w-full h-370 2xl:h-510 shadow-lg object-cover"
-                                src="https://source.unsplash.com/1600x900/?nature,photography"
+                                src="https://source.unsplash.com/1600x900/?travel,film,spirituality"
                                 alt="user-pic"
                             />
                         </div>
-                        {/* <div className="absolute top-0 z-1 left-0 p-5 invisible md:visible">
-                            <Link
-                                to="/"
-                                className="flex px-2  w-190 items-center"
-                            >
-                                <img src={logo} alt="logo" className="w-full" />
-                            </Link>
-                        </div> */}
                     </div>
                     <div className="">
                         <div className="overflow-x-auto flex flex-row justify-around mt-5 px-3 visible ">
