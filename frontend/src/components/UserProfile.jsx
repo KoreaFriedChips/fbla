@@ -17,7 +17,7 @@ const UserProfile = () => {
 
     const [user, setUser] = useState();
     const [pins, setPins] = useState();
-    const [text, setText] = useState('Created');
+    const [text, setText] = useState('Events');
     const [activeBtn, setActiveBtn] = useState('created');
     const navigate = useNavigate();
     const { userId } = useParams();
@@ -39,7 +39,7 @@ const UserProfile = () => {
             client.fetch(createdPinsQuery).then((data) => {
                 setPins(data);
             });
-        } else if (text === 'Joined') {
+        } else {
             const savedPinsQuery = userSavedPinsQuery(userId);
 
             client.fetch(savedPinsQuery).then((data) => {

@@ -88,7 +88,7 @@ const CreatePin = ({ user }) => {
         <div className="flex flex-col justify-center items-center mt-5 lg:h-4/5">
             {/* error alert */}
             <div className="overflow-hidden ease-in-out duration 200" style={{ height: errorNotif ? "3.5rem" : "0" }}>
-                <div className="w-full bg-red-300 flex items-center justify-between p-3 rounded-lg">
+                <div className="w-full bg-red-300 flex items-center justify-between p-3 rounded-lg mb-4">
                     <p className="text-xl">{errorMessage} &#160;</p>
                     <button
                         className="text-xl font-bold"

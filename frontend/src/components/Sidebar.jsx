@@ -1,13 +1,11 @@
 import React from 'react'
 import { NavLink, Link } from 'react-router-dom';
-import { RiHomeFill } from 'react-icons/ri';
 import { IoIosArrowForward } from 'react-icons/io';
 
 import logo from '../assets/djx.png';
 import { prizes, ranking, winners } from '../utils/data';
 
-const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
-const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black  transition-all duration-200 ease-in-out capitalize';
+const buttonStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 
 const Sidebar = ({ closeToggle, user }) => {
 
@@ -30,45 +28,45 @@ const Sidebar = ({ closeToggle, user }) => {
                     <div class="h-256 group">
                         <div class="flex flex-col overflow-hidden gap-3 h-10 duration-200  group-hover:h-96">
                             <Link to={`/winners`} className="flex gap-2 mt-2 items-center">
-                                <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">Last Quarter's Winners</h3>
+                                <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">Last Quarter's Winners &#9662;</h3>
                             </Link>
                             {winners.slice(0, winners.length).map((winner) => (
                                 <NavLink
                                     to={`/`}
-                                    className={isNotActiveStyle}
+                                    className={buttonStyle}
                                     onClick={handleCloseSidebar}
                                     key={winner.name}
                                 >
-                                    <img src={winner.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
+                                    <img src={winner.image} className="w-11 h-11 rounded-full shadow-sm object-fit" alt="person" />
                                     {winner.name} | Grade: {winner.grade}
                                 </NavLink>
                             ))}
                         </div>
                         <div className="flex flex-col overflow-hidden gap-3 h-10 duration-200  group-hover:h-96">
-                            <h3 className="mt-3 px-5 text-base 2xl:text-xl font-bold">This Quarter's Prizes</h3>
+                            <h3 className="mt-3 px-5 text-base 2xl:text-xl font-bold">This Quarter's Prizes &#9662;</h3>
                             {prizes.slice(0, prizes.length).map((prize) => (
                                 <NavLink
                                     to={`/`}
-                                    className={isNotActiveStyle}
+                                    className={buttonStyle}
                                     onClick={handleCloseSidebar}
                                     key={prize.name}
                                 >
-                                    <img src={prize.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
+                                    <img src={prize.image} className="w-11 h-11 rounded-full shadow-sm object-fit" alt="person" />
                                     {prize.name} | {prize.points}
                                 </NavLink>
                             ))}
                         </div>
                         <div className="flex flex-col gap-3 duration-200 h-100 group-hover:h-100">
                             <h3 className="mt-2 px-5 text-base 2xl:text-xl font-bold">Leaderboard</h3>
-                            {ranking.slice(0, ranking.length).map((rank) => (
+                            {ranking.slice(0, 10).map((rank) => (
                                 <NavLink
                                     to={`/`}
-                                    className={isNotActiveStyle}
+                                    className={buttonStyle}
                                     onClick={handleCloseSidebar}
                                     key={rank.name}
                                 >
                                     {rank.rank}
-                                    <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" />
+                                    <img src={rank.image} className="w-11 h-11 rounded-full shadow-sm object-fit" alt="person" />
                                     {rank.name} | {rank.points}
                                 </NavLink>
                             ))}

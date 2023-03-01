@@ -91,12 +91,27 @@ export const ranking = [
     rank: 9,
     points: 100,
     grade: 9
-  }, {
+  },
+  {
     name: 'Person 10',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO-hn0Y_MwW1MnLKa5FL8n7PVDDJMZMOpUAuFtiSn9_OR3INzUzUl1BPP_yARSibDox9M&usqp=CAU',
     rank: 10,
     points: 75,
     grade: 10
+  },
+  {
+    name: 'Alex',
+    image: 'https://lh3.googleusercontent.com/a/AATXAJxNPcFDfj8QeCHVndlsgi1LVYVu1VHRmD2XACLg=s96-c',
+    rank: 11,
+    points: 45,
+    grade: 12
+  },
+  {
+    name: 'Alex Xu',
+    image: 'https://lh3.googleusercontent.com/a-/AOh14GhAyuuPcKOWL51S0tK-IZw_dJgDa9_ax0WvdT46hg=s96-c',
+    rank: 12,
+    points: 30,
+    grade: 12
   },
 ];
 
