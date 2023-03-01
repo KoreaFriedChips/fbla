@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import WheelComponent from 'react-wheel-of-prizes';
 import { ranking } from '../utils/data';
 import Dropdown from './Dropdown';
@@ -9,31 +8,13 @@ const Winners = ({ user }) => {
 
     const { admin } = user
 
-    let grade9 = [
-        'Person 1',
-        'Person 5',
-        'Person 9',
-        'Alex Xu',
-        'Bill Jiang',
-        'Bryan Deng'
-    ]
-    let grade10 = [
-        'Person 2',
-        'Person 6',
-        'Person 10'
-    ]
-    let grade11 = [
-        'Person 3',
-        'Person 7',
-    ]
-    let grade12 = [
+    let seg = [
         'Person 4',
-        'Person 9',
-        'Alex Xu'
+        'Person 8',
+        'Alex Xu',
+        'Alex Xu',
     ]
     const [grade, setGrade] = useState(9);
-    const [seg, setSeg] = useState(grade9);
-
 
     const wheelColours = () => {
         let arr = [];
@@ -56,23 +37,15 @@ const Winners = ({ user }) => {
 
     const gradeNine = () => {
         setGrade(9);
-        setSeg(grade9)
-        console.log(seg)
     };
     const gradeTen = () => {
         setGrade(10);
-        setSeg(grade10)
-        console.log(seg)
     };
     const gradeEleven = () => {
         setGrade(11);
-        setSeg(grade11)
-        console.log(seg)
     };
     const gradeTwelve = () => {
         setGrade(12);
-        setSeg(grade12)
-        console.log(seg)
     };
 
     if (admin) {
@@ -95,7 +68,7 @@ const Winners = ({ user }) => {
                         <div>
                             <Dropdown
                                 trigger={
-                                    <button className='font-bold text-2xl text-center mb-2 ml-3 bg-sky-100 p-3 rounded-lg'>Grade {grade}</button>}
+                                    <button className='font-bold text-2xl text-center mb-2 ml-3 bg-sky-100 p-3 rounded-lg'>Grade {grade} &#9662;</button>}
                                 menu={[
                                     <button onClick={gradeNine}>Grade 9</button>,
                                     <button onClick={gradeTen}>Grade 10</button>,

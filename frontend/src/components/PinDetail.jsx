@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { MdDownloadForOffline } from 'react-icons/md';
 import { Link, useParams } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -13,7 +12,7 @@ const PinDetail = ({ user }) => {
 
     // success notification setup
     const [successNotif, setSuccessNotif] = useState(false);
-    const successMessage = "Successfully joined the event!";
+    const [successMessage, setSuccessMessage] = useState();
     function toggleSuccess() {
         setSuccessNotif(true);
     }
@@ -28,6 +27,8 @@ const PinDetail = ({ user }) => {
     const [comment, setComment] = useState('');
     const [addingComment, setAddingComment] = useState(false);
     const { pinId } = useParams();
+    const [joinText, setJoinText] = useState('Join')
+    const [getPoints, setGetPoints] = useState(false);
 
     // from the backend grab the properties of the pin adn store it in pinDetail
     const fetchPinDetails = () => {
@@ -104,7 +105,9 @@ const PinDetail = ({ user }) => {
             points = 0;
     }
     // update user points when event is joined
+    // when you successfully get points, make the get points button disappear
     const updateUserPoints = () => {
+        setGetPoints(true)
         console.log(user.points)
         console.log(points)
     };
@@ -156,18 +159,29 @@ const PinDetail = ({ user }) => {
                                 <div className="flex gap-2 items-center">
                                     {/* move join button here, when user joins give a success notification */}
                                     <button
-                                        onClick={toggleSuccess}
+                                        onClick={() => {
+                                            setSuccessMessage("Successfully joined the event!");
+                                            toggleSuccess();
+                                            setJoinText('Joined');
+                                        }
+                                        }
                                         type="button"
                                         className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
                                     >
-                                        Join
+                                        {joinText}
                                     </button>
                                 </div>
                                 <div>
                                     <button
-                                        onClick={updateUserPoints}
+                                        onClick={() => {
+                                            setSuccessMessage('Successfully added points!');
+                                            toggleSuccess();
+                                            updateUserPoints();
+                                        }
+                                        }
                                         type="button"
                                         className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
+                                        style={{ visibility: getPoints ? "hidden" : "visible" }}
                                     >
                                         Get Points
                                     </button>

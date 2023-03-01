@@ -4,8 +4,7 @@ import { IoMdAdd, IoMdSearch } from 'react-icons/io';
 import { categories } from '../utils/data';
 
 
-const isNotActiveStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
-const isActiveStyle = 'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black  transition-all duration-200 ease-in-out capitalize';
+const buttonStyle = 'flex items-center px-5 gap-3 text-gray-500 hover:text-black transition-all duration-200 ease-in-out capitalize';
 
 // navigation bar contains categories and search bar for easily finding events
 const Navbar = ({ searchTerm, setSearchTerm, user }) => {
@@ -32,7 +31,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                             {categories.slice(0, categories.length).map((category) => (
                                 <NavLink
                                     to={`/category/${category.name}`}
-                                    className={isNotActiveStyle}
+                                    className={buttonStyle}
                                     key={category.name}
                                 >
                                     <img src={category.image} className="w-12 h-12 rounded-full shadow-sm object-contain" alt="category" />
@@ -96,7 +95,7 @@ const Navbar = ({ searchTerm, setSearchTerm, user }) => {
                             {categories.slice(0, categories.length).map((category) => (
                                 <NavLink
                                     to={`/category/${category.name}`}
-                                    className={isNotActiveStyle}
+                                    className={buttonStyle}
                                     key={category.name}
                                 >
                                     <div className="mr-4 items-center">
