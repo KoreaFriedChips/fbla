@@ -27,3 +27,11 @@ One of the key technical features of DJX is its cloud-based architecture. By lev
 Another important aspect of the technical design of DJX is its integration capabilities. We understood that schools often use a variety of different tools and applications to manage their operations, and we wanted to make sure that DJX could seamlessly integrate with these tools. Our platform was designed with open APIs, making it easy to connect with other applications and tools that schools use, such as learning management systems, student information systems, and grade book tools.
 
 Finally, we recognized the importance of data privacy and security. To ensure that our platform was fully compliant with the latest data privacy regulations, we implemented robust security measures and protocols, including end-to-end encryption, two-factor authentication, and role-based access controls. This ensures that all data transmitted through DJX is protected and secure.
+
+## Acknowledgements
+
+This section is dedicated to all the resources we used to make the prototype of our application a reality:
+
+- [Unsplash](https://unsplash.com/) for all the stock images
+- [Dreams Time](https://www.dreamstime.com/) for user profile pictures
+- [AYJ Athletics](https://www.instagram.com/ayj.athletics/) for designing the post photos
