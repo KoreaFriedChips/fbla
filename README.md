@@ -1,6 +1,6 @@
 # FBLA Coding
 
-Welcome to DJX, the all-in-one platform made for connecting students with their schools. Our slogan, "*Creating Active Schools*", is one that we hold with pride. The objective of this platform has always been to get students to not only be aware of the exciting events happening within their school, but also to encourage participation by incorporating the concept of friendly competition and prizes.
+Welcome to DJX, the all-in-one platform made for connecting students with their schools. Our slogan, "*Current Activity Stage*", is one that we hold with pride. The objective of this platform has always been to get students to not only be aware of the exciting events happening within their school, but also to encourage participation by incorporating the concept of friendly competition and prizes.
 
 This README file details a thorough guide of our stylistic and technical design choices while designing DJX.
 
